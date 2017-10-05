@@ -381,7 +381,8 @@ router.get('/arrange/batch/change',function(req,res,next){
     })
 });
 
-/*所有我传回的数据，都是修改好的数据，比较方便的做法是后端直接覆写，或者通过深比较修改变化的数据*/
+/*所有我传回的数据，都是修改好的数据，是整个数据结构都传回去的，因为用户可以随便任意修改其中的多个属性
+  比较方便的做法是后端直接覆写，或者通过深比较修改变化的数据*/
 
 router.get('/arrange/update/arrangedata',function(req,res,next){
   // 传回的数据在req.body中
