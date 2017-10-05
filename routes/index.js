@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
     res.render('index', { title: 'Express' });
 });
 
-router.get('/arrange/factorydata/',function(req,res,next){
+router.post('/arrange/factorydata/',function(req,res,next){
     res.json([
         {
             name:'工厂01',
@@ -29,7 +29,7 @@ router.get('/arrange/factorydata/',function(req,res,next){
     ]);
 });
 
-router.get('/arrange/arrangedata',function(req,res,next){
+router.post('/arrange/arrangedata',function(req,res,next){
 
     // 我这边会通过query的形式传给你需要的参数:
     let factory = req.query.factory;
@@ -193,7 +193,7 @@ router.get('/arrange/arrangedata',function(req,res,next){
     });
 });
 
-router.get('/arrange/batch/arrange',function(req,res,next){
+router.post('/arrange/batch/arrange',function(req,res,next){
 
     // 我这边会通过query的形式传给你需要的参数:
     let factory = req.query.factory;
@@ -282,7 +282,7 @@ router.get('/arrange/batch/arrange',function(req,res,next){
     })
 });
 
-router.get('/arrange/batch/change',function(req,res,next){
+router.post('/arrange/batch/change',function(req,res,next){
 
     // 我这边会通过query的形式传给你需要的参数:
     let factory = req.query.factory;
@@ -384,16 +384,16 @@ router.get('/arrange/batch/change',function(req,res,next){
 /*所有我传回的数据，都是修改好的数据，是整个数据结构都传回去的，因为用户可以随便任意修改其中的多个属性
   比较方便的做法是后端直接覆写，或者通过深比较修改变化的数据*/
 
-router.get('/arrange/update/arrangedata',function(req,res,next){
+router.post('/arrange/update/arrangedata',function(req,res,next){
   // 传回的数据在req.body中
 });
 
-router.get('/arrange/update/batch/arrange',function(req,res,next){
-
+router.post('/arrange/update/batch/arrange',function(req,res,next){
+  // 传回的数据在req.body中
 });
 
-router.get('/arrange/update/batch/change',function(req,res,next){
-
+router.post('/arrange/update/batch/change',function(req,res,next){
+  // 传回的数据在req.body中
 });
 
 module.exports = router;
