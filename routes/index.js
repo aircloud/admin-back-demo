@@ -30,6 +30,11 @@ router.get('/arrange/factorydata/',function(req,res,next){
 });
 
 router.get('/arrange/arrangedata',function(req,res,next){
+
+    // 我这边会通过query的形式传给你需要的参数:
+    let factory = req.query.factory;
+    let area = req.query.area;
+
     res.json({
         machine: [
             {
@@ -123,7 +128,7 @@ router.get('/arrange/arrangedata',function(req,res,next){
                 },
             }
         ],
-        configSource: {
+        configSource: { // 分别是分选机和测试机的通用配置
             fx: {
                 ConfigType: [
                     {
@@ -189,6 +194,11 @@ router.get('/arrange/arrangedata',function(req,res,next){
 });
 
 router.get('/arrange/batch/arrange',function(req,res,next){
+
+    // 我这边会通过query的形式传给你需要的参数:
+    let factory = req.query.factory;
+    let area = req.query.area;
+
     res.json({
         ConfigType:[
             {
@@ -273,6 +283,11 @@ router.get('/arrange/batch/arrange',function(req,res,next){
 });
 
 router.get('/arrange/batch/change',function(req,res,next){
+
+    // 我这边会通过query的形式传给你需要的参数:
+    let factory = req.query.factory;
+    let area = req.query.area;
+
     res.json({
         ConfigType:[
             {
